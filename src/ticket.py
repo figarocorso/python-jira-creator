@@ -3,6 +3,8 @@ class Ticket:
     def __init__(self, default_config={}):
         self.title = ""
         self.description = ""
+
+        self.project = default_config["project"] if "project" in default_config else ""
         self.component = default_config["component"] if "component" in default_config else ""
         self.epic = default_config["epic"] if "epic" in default_config else ""
 
@@ -11,6 +13,7 @@ class Ticket:
 Ticket content:
   Title:       {self.title}
   Description: {self.description}
+  Project:     {self.project}
   Component:   {self.component}
   Epic:        {self.epic}"""
 
