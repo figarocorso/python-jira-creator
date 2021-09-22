@@ -1,0 +1,11 @@
+{
+    "defaults": {
+        "component": "onpremise",
+        "epic": "QA-2540"
+    },
+    "credentials": {
+        "username": "<jira_username>",
+        "password": "<jira_api_key>",
+        "server": "<jira_server>"
+    }
+}

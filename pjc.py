@@ -17,7 +17,7 @@ def get_default_config():
     default_config = {}
     with open(CONFIG_LOCATION) as f:
         default_config = json.load(f)
-    return default_config
+    return default_config.get("defaults", {})
 
 
 if __name__ == "__main__":
