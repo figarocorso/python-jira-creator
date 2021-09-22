@@ -12,7 +12,7 @@ def main():
     ticket.ask_for_title()
     ticket.ask_for_description()
     jira = JiraWrapper(get_jira_credentials(), dry=True)
-    new_issue = jira.create_issue(ticket)
+    new_issue = jira.create_issue(ticket, add_epic=False)
     print(new_issue)
 
 

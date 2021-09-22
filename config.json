@@ -1,6 +1,6 @@
 {
     "defaults": {
-        "component": "onpremise",
+        "component": "Onpremise",
         "epic": "QA-2540",
         "project": "QA"
     },
