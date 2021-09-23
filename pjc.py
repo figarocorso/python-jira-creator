@@ -11,8 +11,9 @@ def main():
     ticket = Ticket(default_config=get_default_config())
     ticket.ask_for_title()
     ticket.ask_for_description()
+    ticket.ask_for_default_epic()
     jira = JiraWrapper(get_jira_credentials(), dry=True)
-    new_issue = jira.create_issue(ticket, add_epic=False)
+    new_issue = jira.create_issue(ticket)
     print(new_issue)
 
 
