@@ -1,8 +1,8 @@
 {
     "defaults": {
-        "component": "Onpremise",
-        "epic": "QA-2540",
-        "project": "QA"
+        "component": "<your_project_favourite_component>",
+        "epic": "<the_epic_you_are_working_on_FOO-111>",
+        "project": "<your_default_project_FOO>"
     },
     "credentials": {
         "username": "<jira_username>",
