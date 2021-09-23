@@ -26,3 +26,6 @@ class JiraWrapper:
             self.jira_client.add_issues_to_epic(ticket.epic, [new_issue.key])
 
         return new_issue
+
+    def get_issue(self, issue_key):
+        return self.jira_client.issue(issue_key)
