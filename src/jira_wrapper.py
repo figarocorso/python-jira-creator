@@ -9,7 +9,7 @@ class JiraWrapper:
                                 options={"server": credentials["server"]})
         self.dry = dry
 
-    def create_issue(self, ticket, add_epic=False):
+    def create_issue(self, ticket):
         issue_dict = {
             'project': {'key': ticket.project},
             'summary': ticket.title,
@@ -22,7 +22,7 @@ class JiraWrapper:
             return issue_dict
 
         new_issue = self.jira_client.create_issue(fields=issue_dict)
-        if add_epic:
+        if ticket.epic:
             self.jira_client.add_issues_to_epic(ticket.epic, [new_issue.key])
 
         return new_issue
