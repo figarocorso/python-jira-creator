@@ -7,6 +7,7 @@ class Ticket:
         self.project = default_config["project"] if "project" in default_config else ""
         self.component = default_config["component"] if "component" in default_config else ""
         self.epic = ""
+        self._default_epic = default_config["epic"] if "epic" in default_config else ""
 
     def __str__(self):
         return f"""
@@ -25,5 +26,5 @@ Ticket content:
 
     def ask_for_default_epic(self):
         include_epic = input("Include default epic? [y/N]: ")
-        if include_epic.lower in ["yes", "y"]:
-            self.epic = default_config["epic"] if "epic" in default_config else ""
+        if include_epic.lower() in ["yes", "y"]:
+            self.epic = self._default_epic
