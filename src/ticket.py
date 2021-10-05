@@ -22,9 +22,18 @@ Ticket content:
         self.title = input("Enter title: ")
 
     def ask_for_description(self):
-        self.description = input("Enter description: ")
+        self.description = self.multiline_input("Enter description (\".\" to finish): ")
 
     def ask_for_default_epic(self):
         include_epic = input(f"Include default epic ({self._default_epic})? [Y/n]: ")
         if include_epic.lower() not in ["no", "n"]:
             self.epic = self._default_epic
+
+    @classmethod
+    def multiline_input(cls, text):
+        lines = []
+        line = input(text)
+        while line != ".":
+            lines.append(line)
+            line = input()
+        return '\n'.join(lines)
