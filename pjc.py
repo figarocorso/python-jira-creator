@@ -35,8 +35,8 @@ def get_jira_credentials():
 
 def open_issue_in_browser(issue):
     if not DRY_RUN:
-        open_issue = input("Open in browser? [y/N]: ")
-        if open_issue.lower() in ["yes", "y"]:
+        open_issue = input("Open in browser? [Y/n]: ")
+        if open_issue.lower() not in ["no", "n"]:
             webbrowser.open_new_tab(issue.permalink())
 
 
