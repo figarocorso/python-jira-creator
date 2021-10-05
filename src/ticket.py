@@ -25,6 +25,6 @@ Ticket content:
         self.description = input("Enter description: ")
 
     def ask_for_default_epic(self):
-        include_epic = input("Include default epic? [y/N]: ")
-        if include_epic.lower() in ["yes", "y"]:
+        include_epic = input(f"Include default epic ({self._default_epic})? [Y/n]: ")
+        if include_epic.lower() not in ["no", "n"]:
             self.epic = self._default_epic
