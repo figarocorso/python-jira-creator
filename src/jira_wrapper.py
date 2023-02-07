@@ -6,7 +6,7 @@ class JiraWrapper:
     def __init__(self, credentials, dry=False):
         self.jira_client = JIRA(basic_auth=(credentials["username"],
                                             credentials["password"]),
-                                options={"server": credentials["server"]})
+                                options={"server": credentials["server"], "rest_api_version": "3"})
         self.dry = dry
 
     def create_issue(self, ticket):
